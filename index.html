@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cuenta Regresiva de 1 Minuto</title>
+<title>Cuenta Regresiva de 12 Horas</title>
 <style>
     .container {
         width: 400px;
@@ -24,33 +24,44 @@
     .hidden {
         display: none;
     }
-    video {
-        width: 100%;
-        height: auto;
-    }
 </style>
 </head>
 <body>
-<video id="myVideo" controls class="hidden">
-  <source src="video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<audio id="myAudio">
+  <source src="sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 <div class="container">
-    <div id="countdown">01:00</div>
-    <div id="message" class="hidden">¡toca el video!</div>
+    <div id="countdown">12:00:00</div>
+    <div id="message" class="hidden">¡Tiempo terminado!</div>
 </div>
+<button id="startBtn">Iniciar</button>
+<button id="stopBtn">Detener</button>
+<button id="addHourBtn">+1 Hora</button>
+<button id="subtractHourBtn">-1 Hora</button>
+<button id="addMinuteBtn">+1 Minuto</button>
+<button id="subtractMinuteBtn">-1 Minuto</button>
+<button id="resetBtn">Reiniciar</button>
 
 <script>
     const countdownDisplay = document.getElementById('countdown');
     const messageDisplay = document.getElementById('message');
-    const video = document.getElementById('myVideo');
-    let countdownTime = 60; // 1 minuto en segundos
+    const startButton = document.getElementById('startBtn');
+    const stopButton = document.getElementById('stopBtn');
+    const addHourButton = document.getElementById('addHourBtn');
+    const subtractHourButton = document.getElementById('subtractHourBtn');
+    const addMinuteButton = document.getElementById('addMinuteBtn');
+    const subtractMinuteButton = document.getElementById('subtractMinuteBtn');
+    const resetButton = document.getElementById('resetBtn');
+    const audio = document.getElementById('myAudio');
+    let countdownTime = 12 * 60 * 60; // 12 horas en segundos
     let countdownInterval;
 
     function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
         const remainingSeconds = seconds % 60;
-        return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
     }
 
     function startCountdown() {
@@ -60,13 +71,53 @@
             if (countdownTime < 0) {
                 clearInterval(countdownInterval);
                 messageDisplay.classList.remove('hidden');
-                video.classList.remove('hidden');
-                video.play();
+                audio.play(); // Reproduce el sonido cuando el tiempo termina
             }
         }, 1000);
     }
 
-    startCountdown();
+    function stopCountdown() {
+        clearInterval(countdownInterval);
+    }
+
+    function addHour() {
+        countdownTime += 3600; // 3600 segundos en una hora
+        countdownDisplay.textContent = formatTime(countdownTime);
+    }
+
+    function subtractHour() {
+        if (countdownTime >= 3600) {
+            countdownTime -= 3600; // 3600 segundos en una hora
+            countdownDisplay.textContent = formatTime(countdownTime);
+        }
+    }
+
+    function addMinute() {
+        countdownTime += 60;
+        countdownDisplay.textContent = formatTime(countdownTime);
+    }
+
+    function subtractMinute() {
+        if (countdownTime > 60) {
+            countdownTime -= 60;
+            countdownDisplay.textContent = formatTime(countdownTime);
+        }
+    }
+
+    function resetCountdown() {
+        clearInterval(countdownInterval);
+        countdownTime = 12 * 60 * 60;
+        countdownDisplay.textContent = formatTime(countdownTime);
+        messageDisplay.classList.add('hidden');
+    }
+
+    startButton.addEventListener('click', startCountdown);
+    stopButton.addEventListener('click', stopCountdown);
+    addHourButton.addEventListener('click', addHour);
+    subtractHourButton.addEventListener('click', subtractHour);
+    addMinuteButton.addEventListener('click', addMinute);
+    subtractMinuteButton.addEventListener('click', subtractMinute);
+    resetButton.addEventListener('click', resetCountdown);
 </script>
 </body>
 </html>
