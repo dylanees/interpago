@@ -1,123 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cuenta Regresiva de 12 Horas</title>
-<style>
-    .container {
-        width: 400px;
-        height: 300px;
-        border: 5px solid black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 50px;
-        position: relative;
-    }
-    #message {
-        font-size: 24px;
-        position: absolute;
-        bottom: 20px;
-    }
-    .hidden {
-        display: none;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <style>
+        /* Estilos para el contenedor principal */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #4B0082; /* Azul índigo */
+            margin: 0;
+        }
+        /* Estilos para el contenido dentro del contenedor */
+        .contenido {
+            background-color: white;
+            border: 5px solid #4B0082; /* Azul índigo */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative; /* Agregamos posición relativa */
+        }
+        /* Estilos para resaltar el texto "Términos y condiciones del servicio" */
+        .resaltado {
+            font-weight: bold;
+            color: #4B0082; /* Azul índigo */
+        }
+        /* Estilos para el texto de superposición */
+        .superpuesto {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 0;
+            opacity: 0.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Estilos para la lista */
+        ul {
+            text-align: left; /* Alineación izquierda */
+            margin-top: 30px; /* Espacio superior */
+        }
+    </style>
 </head>
 <body>
-<audio id="myAudio">
-  <source src="sound.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-<div class="container">
-    <div id="countdown">12:00:00</div>
-    <div id="message" class="hidden">¡Tiempo terminado!</div>
-</div>
-<button id="startBtn">Iniciar</button>
-<button id="stopBtn">Detener</button>
-<button id="addHourBtn">+1 Hora</button>
-<button id="subtractHourBtn">-1 Hora</button>
-<button id="addMinuteBtn">+1 Minuto</button>
-<button id="subtractMinuteBtn">-1 Minuto</button>
-<button id="resetBtn">Reiniciar</button>
-
-<script>
-    const countdownDisplay = document.getElementById('countdown');
-    const messageDisplay = document.getElementById('message');
-    const startButton = document.getElementById('startBtn');
-    const stopButton = document.getElementById('stopBtn');
-    const addHourButton = document.getElementById('addHourBtn');
-    const subtractHourButton = document.getElementById('subtractHourBtn');
-    const addMinuteButton = document.getElementById('addMinuteBtn');
-    const subtractMinuteButton = document.getElementById('subtractMinuteBtn');
-    const resetButton = document.getElementById('resetBtn');
-    const audio = document.getElementById('myAudio');
-    let countdownTime = 12 * 60 * 60; // 12 horas en segundos
-    let countdownInterval;
-
-    function formatTime(seconds) {
-        const hours = Math.floor(seconds / 3600);
-        const minutes = Math.floor((seconds % 3600) / 60);
-        const remainingSeconds = seconds % 60;
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
-    }
-
-    function startCountdown() {
-        countdownInterval = setInterval(() => {
-            countdownDisplay.textContent = formatTime(countdownTime);
-            countdownTime--;
-            if (countdownTime < 0) {
-                clearInterval(countdownInterval);
-                messageDisplay.classList.remove('hidden');
-                audio.play(); // Reproduce el sonido cuando el tiempo termina
-            }
-        }, 1000);
-    }
-
-    function stopCountdown() {
-        clearInterval(countdownInterval);
-    }
-
-    function addHour() {
-        countdownTime += 3600; // 3600 segundos en una hora
-        countdownDisplay.textContent = formatTime(countdownTime);
-    }
-
-    function subtractHour() {
-        if (countdownTime >= 3600) {
-            countdownTime -= 3600; // 3600 segundos en una hora
-            countdownDisplay.textContent = formatTime(countdownTime);
-        }
-    }
-
-    function addMinute() {
-        countdownTime += 60;
-        countdownDisplay.textContent = formatTime(countdownTime);
-    }
-
-    function subtractMinute() {
-        if (countdownTime > 60) {
-            countdownTime -= 60;
-            countdownDisplay.textContent = formatTime(countdownTime);
-        }
-    }
-
-    function resetCountdown() {
-        clearInterval(countdownInterval);
-        countdownTime = 12 * 60 * 60;
-        countdownDisplay.textContent = formatTime(countdownTime);
-        messageDisplay.classList.add('hidden');
-    }
-
-    startButton.addEventListener('click', startCountdown);
-    stopButton.addEventListener('click', stopCountdown);
-    addHourButton.addEventListener('click', addHour);
-    subtractHourButton.addEventListener('click', subtractHour);
-    addMinuteButton.addEventListener('click', addMinute);
-    subtractMinuteButton.addEventListener('click', subtractMinute);
-    resetButton.addEventListener('click', resetCountdown);
-</script>
+    <!-- Contenedor principal -->
+    <div class="contenido">
+        <!-- Enunciado de bienvenida -->
+        <h1>Bienvenidos</h1>
+        
+        <!-- Nuevo párrafo -->
+        <p>👇Aquí las personas que contrataron wi-fi👇</p>
+        
+        <!-- Lista del 1 al 10 -->
+        <ul>
+            <li>1. mateo</li>
+            <li>2. gabriel d</li>
+            <li>3. leonardo</li>
+            <li>4. lautaro</li>
+            <li>5. luciano d</li>
+            <li>6. ezequiel</li>
+            <li>7. sin cupo</li>
+            <li>8. sin cupo</li>
+            <li>9. sin cupo</li>
+            <li>10. sin cupo</li>
+        </ul>
+        
+        <!-- Párrafo para términos y condiciones del servicio -->
+        <p><span class="resaltado">Términos y condiciones del servicio</span></p>
+        
+        <!-- Texto superpuesto para tapar -->
+        <div class="texto-tapado">
+            <p>"Es simple". Tres semanas de wi-fi por $500, pero cuentan los días de paro y los días que falta, e igual si falta mucho agregaré días gratis para compensar mis faltas..</p>
+        </div>
+        
+        <!-- Texto para más información -->
+        <p>Para más información, haz clic en el siguiente botón o consulta con Dylan.</p>
+        
+        <!-- Botón para ir a Youtube -->
+        <button onclick="window.location.href='https://wa.me/5491127069738'">consultas</button>
+    </div>
 </body>
-</html>
+    </html>
