@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página</title>
     <style>
-        /* Estilos para el contenedor principal */
+        /* Estilos generales */
         body {
             display: flex;
             justify-content: center;
@@ -13,87 +13,88 @@
             height: 100vh;
             background-color: #4B0082; /* Azul índigo */
             margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
         }
-        /* Estilos para el contenido dentro del contenedor */
+
+        /* Contenedor principal */
         .contenido {
             background-color: white;
-            border: 5px solid #4B0082; /* Azul índigo */
+            border: 5px solid #4B0082;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            position: relative; /* Agregamos posición relativa */
+            max-width: 400px;
         }
-        /* Estilos para resaltar el texto "Términos y condiciones del servicio" */
+
+        /* Texto resaltado */
         .resaltado {
             font-weight: bold;
-            color: #4B0082; /* Azul índigo */
+            color: #4B0082;
         }
-        /* Estilos para el texto de superposición */
-        .superpuesto {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 0;
-            opacity: 0.5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+
         /* Estilos para la lista */
         ul {
-            text-align: left; /* Alineación izquierda */
-            margin-top: 30px; /* Espacio superior */
+            text-align: left;
+            margin-top: 20px;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+            margin: 5px 0;
+        }
+
+        /* Botones */
+        button {
+            background-color: #4B0082;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #3a0066;
         }
     </style>
 </head>
 <body>
-    <!-- Contenedor principal -->
     <div class="contenido">
-        <!-- Enunciado de bienvenida -->
         <h1>BIENVENID@S</h1>
+
+        <p>- Los números al lado del nombre indican cuántas semanas le quedan -</p>
         
-        <!-- Nuevo párrafo -->
-        <p>-los numeros alado del nombre indica cuanta semanas le quedan-</p>
-        
-        <!-- Nuevo párrafo -->
-        <p>👇Aquí las personas que contrataron Wi-Fi👇</p>
-        <!-- Lista del 1 al 10 -->
+        <p>👇 Personas que contrataron Wi-Fi 👇</p>
+
         <ul>
-            <li>1. Ezequiel 2</li>
-            <li>2. lio 2</li>
-            <li>3. luciano 2</li>
-            <li>4. quiara 2</li>
-            <li>5. leonardo 2</li>
-            <li>6. Gabriel d 5</li>
-            <li>7. mateo 2</li>
-            <li>8. Ailen 3</li>
-            <li>9. Pricila 3</li>
-            <li>10. tatiana 1</li>
-            <li>11. lautaro 2</li>
+            <li>1. Ezequiel (2 semanas)</li>
+            <li>2. Lio (2 semanas)</li>
+            <li>3. Luciano (2 semanas)</li>
+            <li>4. Quiara (2 semanas)</li>
+            <li>5. Leonardo (2 semanas)</li>
+            <li>6. Gabriel D (5 semanas)</li>
+            <li>7. Mateo (2 semanas)</li>
+            <li>8. Ailén (3 semanas)</li>
+            <li>9. Priscila (3 semanas)</li>
+            <li>10. Tatiana (1 semana)</li>
+            <li>11. Lautaro (2 semanas)</li>
         </ul>
-        
-        <!-- Párrafo para términos y condiciones del servicio -->
+
         <p><span class="resaltado">Términos y condiciones del servicio</span></p>
         
-        <!-- Texto superpuesto para tapar -->
-        <div class="texto-tapado">
-            <p>"Es simple". Tres semanas de Wi-Fi por $500, pero cuentan los días de paro y los días que faltaron, e igual si falta mucho agregaré días gratis para compensar mis faltas.</p>
-        </div>
-        
-        <!-- Botón para ir a la página MASS -->
-        <button onclick="window.location.href='mas.html'">MAS-SERVICIOS</button>
-        
-        <!-- Texto para más información -->
-        <p>Para más información, haz clic en el siguiente botón que te llevará a WhatsApp o consulta con Dylan.</p>
-    
-        <!-- Botón para ir a WhatsApp -->
+        <p>El servicio cuesta $500 por tres semanas. Se cuentan los días de paro y las ausencias. Si hay muchas faltas, se agregarán días gratis como compensación.</p>
+
+        <button onclick="window.location.href='mas.html'">Más Servicios</button>
+
+        <p>Para más información, haz clic en el botón de WhatsApp o consulta con Dylan.</p>
+
         <button onclick="window.location.href='https://wa.me/5491127069738'">WhatsApp</button>
-        
-        <!-- Párrafo de nota -->
-        <p>Nota: el precio puede cambiar el próximo mes</p>
+
+        <p><b>Nota:</b> El precio puede cambiar el próximo mes.</p>
     </div>
 </body>
-            </html>
+</html>
