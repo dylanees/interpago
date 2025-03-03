@@ -3,98 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página</title>
+    <title>Descarga mi juego</title>
     <style>
-        /* Estilos generales */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #4B0082; /* Azul índigo */
-            margin: 0;
             font-family: Arial, sans-serif;
-            color: #333;
-        }
-
-        /* Contenedor principal */
-        .contenido {
-            background-color: white;
-            border: 5px solid #4B0082;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #004080;
             text-align: center;
-            max-width: 400px;
-        }
-
-        /* Texto resaltado */
-        .resaltado {
-            font-weight: bold;
-            color: #4B0082;
-        }
-
-        /* Estilos para la lista */
-        ul {
-            text-align: left;
-            margin-top: 20px;
-            padding: 0;
-        }
-        
-        li {
-            list-style: none;
-            margin: 5px 0;
-        }
-
-        /* Botones */
-        button {
-            background-color: #4B0082;
             color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px 0;
-            width: 100%;
+            padding: 20px;
         }
-
-        button:hover {
-            background-color: #3a0066;
+        .header {
+            background: linear-gradient(90deg, #3d004f, #8a008a);
+            padding: 15px;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            display: inline-block;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+        .report-section {
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .report-btn {
+            background: red;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .report-btn:hover {
+            background: darkred;
+        }
+        .container {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .version {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 10px;
+            width: 320px;
+        }
+        .version span {
+            font-size: 16px;
+            text-align: left;
+            flex-grow: 1;
+            padding-left: 5px;
+        }
+        .download-btn {
+            background: #0084ff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background: #005bbf;
+        }
+        .info {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .whatsapp-btn {
+            background: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
-    <div class="contenido">
-        <h1>BIENVENID@S</h1>
 
-        <p>- Los números al lado del nombre indican cuántas semanas le quedan -</p>
-        
-        <p>👇 Personas que contrataron Wi-Fi 👇</p>
+    <div class="header">Bienvenido a la página de descarga de mi juego</div>
 
-        <ul>
-            <li>1. Ezequiel (2 semanas)</li>
-            <li>2. Lio (2 semanas)</li>
-            <li>3. Luciano (2 semanas)</li>
-            <li>4. Quiara (2 semanas)</li>
-            <li>5. Leonardo (2 semanas)</li>
-            <li>6. Gabriel D (5 semanas)</li>
-            <li>7. Mateo (2 semanas)</li>
-            <li>8. Ailén (3 semanas)</li>
-            <li>9. Priscila (3 semanas)</li>
-            <li>10. Tatiana (1 semana)</li>
-            <li>11. Lautaro (2 semanas)</li>
-        </ul>
-
-        <p><span class="resaltado">Términos y condiciones del servicio</span></p>
-        
-        <p>El servicio cuesta $500 por tres semanas. Se cuentan los días de paro y las ausencias. Si hay muchas faltas, se agregarán días gratis como compensación.</p>
-
-        <button onclick="window.location.href='mas.html'">Más Servicios</button>
-
-        <p>Para más información, haz clic en el botón de WhatsApp o consulta con Dylan.</p>
-
-        <button onclick="window.location.href='https://wa.me/5491127069738'">WhatsApp</button>
-
-        <p><b>Nota:</b> El precio puede cambiar el próximo mes.</p>
+    <div class="report-section">
+        Si llega a fallar algún enlace, por favor repórtelo y diga cuál versión es la que falla.  
+        <br>Intentaremos arreglarlo lo antes posible.
     </div>
+    <a href="https://freesuggestionbox.com/pub/pgotkru" class="report-btn">Reportar enlace</a>
+
+    <div class="container">
+        <div class="version">
+            <span>Mi juego versión 1.3</span>
+            <a href="https://cutt.ly/trrSc6M2" class="download-btn">Descargar</a>
+        </div>
+        <div class="version">
+            <span>Mi juego versión 1.4</span>
+            <a href="https://tu-enlace.com/version1.4" class="download-btn">Descargar</a>
+        </div>
+        <div class="version">
+            <span>Mi juego versión 1.5</span>
+            <a href="https://tu-enlace.com/version1.5" class="download-btn">Descargar</a>
+        </div>
+        <div class="version">
+            <span>Mi juego versión 1.6</span>
+            <a href="https://tu-enlace.com/version1.6" class="download-btn">Descargar</a>
+        </div>
+        <div class="version">
+            <span>Mi juego versión 1.7</span>
+            <a href="https://tu-enlace.com/version1.7" class="download-btn">Descargar</a>
+        </div>
+    </div>
+
+    <div class="info">
+        Para más información, puedes visitar nuestro canal de WhatsApp.<br>
+        ⬇ Pulsa el botón ⬇
+    </div>
+    <a href="https://whatsapp.com/channel/0029VaAuBL1E50UoqGQpTe3s" class="whatsapp-btn">Canal de WhatsApp</a>
+
 </body>
 </html>
